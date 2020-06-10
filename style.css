@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
     font-family: 'poppins',sans-serif;
 }
 
@@ -43,33 +46,77 @@
 
 .banner header{
     position: absolute;
-    top: 0;
+    top: 40px;
     left: 0;
     width: 100%;
-    padding: 40px 100px;
     display: flex;
     justify-content: space-between  ;
     align-items: center;
-    z-index: 100;
+    z-index: 200;
 }
 
-.banner header .logo{
-    color:#fff;
-    text-decoration: none;
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
+nav{
+    position: fixed;
+    z-index: 400;
+    background: #455a64;
+    height: 80px;
+    width: 100%;
+  }
+  label.logo{
+    color: #f2f2f2;
+    font-size: 33px;
+    line-height: 80px;
+    padding: 0 50px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+  }
+  nav ul{
+    float: right;
+    margin-right: 60px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 2px;
+  }
+  nav ul li a{
+    transition: 0.5s;
+    color: #f2f2f2;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase; 
+    font-family: 'Poppins', sans-serif;
+  }
+  nav ul li a:hover{
+      transition:0.5s;
+      border: solid #fff 1px;
+      letter-spacing: 3px;
+  }
 
-.banner header .toggle{
-    position: relative;
-    width: 36px;
-    height: 28px;
-    background: url(toggle.png);
-    background-size: cover;
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
     cursor: pointer;
-}
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  @media (max-width: 991px){
+    label.logo{
+      font-size: 27px;
+      padding-left: 25px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  
 
 .about{
     position: relative;
@@ -283,12 +330,38 @@
     max-width: 20px;
 }
 
+.menu{
+    transform: translateX(-35%);
+    margin-top: 75px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: none;
+    text-align: center;
+    z-index: 100;
+
+}
+
+.menu a{
+    text-transform: uppercase;
+    transition: 0.5s;
+    font-size: 1.25em;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    border: solid #fff 1px;
+    background: transparent;
+    transition: 0.5s;
+    letter-spacing: 2px;
+}
+
+
 @media (max-width: 991px){
     .banner{
         padding: 50px;
-    }
-    .banner header{
-        padding: 20px 50px;
     }
     .banner .content h2{
         font-size: 36px;
@@ -344,4 +417,47 @@
     .footer ul{
         margin-bottom: 20px;
     }
+    .menu{
+        transform: translateX(-32%);
+        margin-top: 50px;
+    }
+    .menu a{
+        font-size: 16px;
+    }
 }
+@media (max-width: 991px){
+    label.logo{
+      font-size: 21px;
+      padding-left: 25px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 991px){
+    .checkbtn{
+      display: block;
+      margin-right: 40px;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #1b3039;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
