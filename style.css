@@ -168,6 +168,7 @@ nav{
 }
 
 .services .container .serviceBx{
+    border-radius: 50%;
     position: relative;
     background: #fff;
     width: 350px;
